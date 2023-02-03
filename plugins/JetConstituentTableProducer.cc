@@ -99,7 +99,7 @@ void JetConstituentTableProducer<T>::produce(edm::Event &iEvent, const edm::Even
   auto outSVs = std::make_unique<std::vector<const reco::VertexCompositePtrCandidate *>> ();
   std::vector<int> jetIdx_pf, jetIdx_sv, pfcandIdx, svIdx;
   // PF Cands
-  std::vector<float> btagEtaRel, btagPtRatio, btagPParRatio, btagSip3dVal, btagSip3dSig, btagJetDistVal, cand_pt;
+  std::vector<float> btagEtaRel, btagPtRatio, btagPParRatio, btagSip3dVal, btagSip3dSig, btagJetDistVal, cand_pt, cand_dz, cand_dxy, cand_dzsig, cand_dxysig;
   // Secondary vertices
   std::vector<float> sv_mass, sv_pt, sv_ntracks, sv_chi2, sv_normchi2, sv_dxy, sv_dxysig, sv_d3d, sv_d3dsig, sv_costhetasvpv;
   std::vector<float> sv_ptrel, sv_phirel, sv_deltaR, sv_enratio;
@@ -121,6 +121,8 @@ void JetConstituentTableProducer<T>::produce(edm::Event &iEvent, const edm::Even
     GlobalVector jet_ref_track_dir(jet.px(), jet.py(), jet.pz());
     VertexDistance3D vdist;
 
+    // std::cout << " \n filling variables for this jet with pt " << jet.pt() << " eta " << jet.eta() << " jetpx " << jet.px() << " jetpy " << jet.py() << " jetpz " << jet.pz() << std::endl;
+
     pv_ = &vtxs_->at(0);
 
     //////////////////////
@@ -130,9 +132,10 @@ void JetConstituentTableProducer<T>::produce(edm::Event &iEvent, const edm::Even
     for (const auto &sv : *svs_) {
       // Factor in cuts in NanoAOD for indexing
       Measurement1D dl= vdist.distance(vtxs_->front(), VertexState(RecoVertex::convertPos(sv.position()),RecoVertex::convertError(sv.error())));
-      if(dl.significance() > 3){
-        allSVs.push_back(&sv);
-      }
+      //if(dl.significance() > 3){
+      //  allSVs.push_back(&sv);
+      //}
+      allSVs.push_back(&sv);
       if (reco::deltaR2(sv, jet) < jet_radius_ * jet_radius_) {
         jetSVs.push_back(&sv);
       }
@@ -157,6 +160,8 @@ void JetConstituentTableProducer<T>::produce(edm::Event &iEvent, const edm::Even
       jetIdx_sv.push_back(i_jet);
       if (readBtag_ && !vtxs_->empty()) {
         // Jet independent
+	//std::cout << "sv pt " << sv->pt() << " mass " << sv->mass() << std::endl;
+
         sv_mass.push_back(sv->mass());
         sv_pt.push_back(sv->pt());
 
@@ -180,6 +185,7 @@ void JetConstituentTableProducer<T>::produce(edm::Event &iEvent, const edm::Even
 
     // PF Cands   
     std::vector<reco::CandidatePtr> const & daughters = jet.daughterPtrVector();
+
     for (const auto &cand : daughters) {
       if (!(cand.isNonnull() && cand.isAvailable())) {
         edm::LogWarning("InvalidCand") << "Found null candidate, skipping." << std::endl;
@@ -187,6 +193,8 @@ void JetConstituentTableProducer<T>::produce(edm::Event &iEvent, const edm::Even
       }
       auto candPtrs = cands_->ptrs();
       auto candInNewList = std::find( candPtrs.begin(), candPtrs.end(), cand );
+
+
       if ( candInNewList == candPtrs.end() ) {
         // Hack: try to patch with momentum matching
         for (auto candInNewList2 : candPtrs) {
@@ -204,10 +212,23 @@ void JetConstituentTableProducer<T>::produce(edm::Event &iEvent, const edm::Even
       jetIdx_pf.push_back(i_jet);
       pfcandIdx.push_back(candInNewList - candPtrs.begin());
       cand_pt.push_back(cand->pt());
+
+      auto const *packedCand = dynamic_cast <pat::PackedCandidate const *>(cand.get());
+
+      cand_dz.push_back( packedCand->dz() );
+      cand_dxy.push_back( packedCand->dxy() );
+      float dzsig = packedCand->bestTrack() ? packedCand->dz() / packedCand->dzError() : 0;
+      float dxysig = packedCand->bestTrack() ? packedCand->dxy() / packedCand->dxyError() : 0;
+      cand_dzsig.push_back( dzsig );
+      cand_dxysig.push_back( dxysig );
+
       if (readBtag_ && !vtxs_->empty()) {
         if ( cand.isNull() ) continue;
-        auto const *packedCand = dynamic_cast <pat::PackedCandidate const *>(cand.get());
-        if ( packedCand == nullptr ) continue;
+
+	//std::cout << "packed cand " << " pt " << cand->pt() << " dz " <<  packedCand->dz() << " dxy " <<  packedCand->dxy() << " dzsig " << dzsig << " dxysig " << dxysig << std::endl;
+	
+        if ( packedCand == nullptr )
+	  continue;
         if ( packedCand && packedCand->hasTrackDetails()){
           btagbtvdeep::TrackInfoBuilder trkinfo(track_builder_);
           trkinfo.buildTrackInfo(&(*packedCand), jet_dir, jet_ref_track_dir, vtxs_->at(0));
@@ -226,16 +247,22 @@ void JetConstituentTableProducer<T>::produce(edm::Event &iEvent, const edm::Even
                 btagJetDistVal.push_back(0);
         }
       }
+
     }  // end jet loop
+
   }
 
   auto candTable = std::make_unique<nanoaod::FlatTable>(outCands->size(), name_, false);
-  // std::cout << "DEBUG : candTable (" << name_ << ") has N = " << outCands->size() << std::endl;
+  //std::cout << "\n DEBUG : candTable (" << name_ << ") has N = " << outCands->size() << std::endl;
   // We fill from here only stuff that cannot be created with the SimpleFlatTableProducer
   candTable->addColumn<int>(idx_name_, pfcandIdx, "Index in the candidate list", nanoaod::FlatTable::IntColumn);
   candTable->addColumn<int>("jetIdx", jetIdx_pf, "Index of the parent jet", nanoaod::FlatTable::IntColumn);
   if (readBtag_) {
     candTable->addColumn<float>("pt", cand_pt, "pt", nanoaod::FlatTable::FloatColumn, 10);  // to check matchind down the line
+    candTable->addColumn<float>("Cdz", cand_dz, "Cdz", nanoaod::FlatTable::FloatColumn, 10); // candidate dz w no trackdetails requirement
+    candTable->addColumn<float>("Cdxy", cand_dxy, "Cdxy", nanoaod::FlatTable::FloatColumn, 10);
+    candTable->addColumn<float>("Cdzsig", cand_dzsig, "Cdzsig", nanoaod::FlatTable::FloatColumn, 10);
+    candTable->addColumn<float>("Cdxysig", cand_dxysig, "Cdxysig", nanoaod::FlatTable::FloatColumn, 10);
     candTable->addColumn<float>("btagEtaRel", btagEtaRel, "btagEtaRel", nanoaod::FlatTable::FloatColumn, 10);
     candTable->addColumn<float>("btagPtRatio", btagPtRatio, "btagPtRatio", nanoaod::FlatTable::FloatColumn, 10);
     candTable->addColumn<float>("btagPParRatio", btagPParRatio, "btagPParRatio", nanoaod::FlatTable::FloatColumn, 10);
@@ -248,6 +275,7 @@ void JetConstituentTableProducer<T>::produce(edm::Event &iEvent, const edm::Even
    // SV table
   auto svTable = std::make_unique<nanoaod::FlatTable>(outSVs->size(), nameSV_, false);
   // We fill from here only stuff that cannot be created with the SimpleFlatTnameableProducer
+  // std::cout << "\n DEBUG : svTable (" << name_ << ") has N = " << sv_mass.size() << std::endl;
   svTable->addColumn<int>("jetIdx", jetIdx_sv, "Index of the parent jet", nanoaod::FlatTable::IntColumn);
   svTable->addColumn<int>(idx_nameSV_, svIdx, "Index in the SV list", nanoaod::FlatTable::IntColumn);
   if (readBtag_) {
