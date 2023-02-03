@@ -1,9 +1,11 @@
 <use name="FWCore/Framework"/>
 <use name="FWCore/MessageLogger"/>
 <library file="*.cc" name="PhysicsToolsNanoAODJMARPlugins">
+  <use name="DataFormats/Candidate"/>
   <use name="DataFormats/PatCandidates"/>
   <use name="DataFormats/VertexReco"/>
   <use name="DataFormats/NanoAOD"/>
+  <use name="DataFormats/BTauReco"/>
   <use name="CommonTools/Utils"/>
   <use name="CommonTools/UtilAlgos"/>
   <use name="CommonTools/CandAlgos"/>

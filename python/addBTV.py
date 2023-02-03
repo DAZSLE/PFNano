@@ -34,7 +34,7 @@ def update_jets_AK4(process):
     return process
 
 
-def update_jets_AK8(process):
+def update_jets_AK8(process,custom_tagger_name=None):
     # Based on ``nanoAOD_addDeepInfoAK8``
     # in https://github.com/cms-sw/cmssw/blob/master/PhysicsTools/NanoAOD/python/nano_cff.py
     # Care needs to be taken to make sure no discriminators from stock Nano are excluded -> would results in unfilled vars
@@ -76,6 +76,46 @@ def update_jets_AK8(process):
     # add DeepDoubleX taginfos
     process.updatedPatJetsTransientCorrectedAK8WithDeepInfo.tagInfoSources.append(cms.InputTag("pfDeepDoubleXTagInfosAK8WithDeepInfo"))
     process.updatedPatJetsTransientCorrectedAK8WithDeepInfo.addTagInfos = cms.bool(True)
+
+    if custom_tagger_name is not None:
+        customTaggersAvailableDict = {
+            'DeepHWWV1': {
+                'cff_path': 'PhysicsTools.PFNano.hwwTagger.pfMassDecorrelatedDeepHWWV1_cff',
+                'disc_name': '_pfMassDecorrelatedDeepHWWV1JetTagsAll',
+                'nano_branch_name': 'deepHWWMDV1',
+            },
+            'InclParticleTransformerV1': {
+                'cff_path': 'PhysicsTools.PFNano.hwwTagger.pfMassDecorrelatedInclParticleTransformerV1_cff',
+                'disc_name': '_pfMassDecorrelatedInclParticleTransformerV1JetTagsAll',
+                'nano_branch_name': 'inclParTMDV1',
+            }
+        }
+        if custom_tagger_name not in customTaggersAvailableDict:
+            raise ValueError("the specified tagger '%s' does not exist." % custom_tagger_name)
+            
+        cfg = customTaggersAvailableDict[custom_tagger_name]
+        mod = __import__(cfg['cff_path'], globals(), locals(), [cfg['disc_name']], -1)
+        btagDiscriminators = getattr(mod, cfg['disc_name'])
+        
+        # add variables to NanoAOD FatJet table
+        for prob in btagDiscriminators: # include all raw scores and tagger discriminants
+            name = cfg['nano_branch_name'] + '_' + prob.split(':')[1]
+            setattr(process.fatJetTable.variables, name, Var("bDiscriminator('%s')" % prob, float, doc=prob, precision=-1))
+
+        from PhysicsTools.PFNano.jetTools import updateJetCollection as updateJetCollectionCustom
+        # inference the tagger score
+        updateJetCollectionCustom(
+            process,
+            jetSource = cms.InputTag('selectedUpdatedPatJetsAK8WithDeepInfo'),
+            rParam = 0.8,
+            jetCorrections = ('AK8PFPuppi', cms.vstring(['L2Relative', 'L3Absolute', 'L2L3Residual']), 'None'),
+            btagDiscriminators = btagDiscriminators,
+            postfix='AK8WithCustomTagger',
+        )
+        process.jetCorrFactorsAK8.src = "selectedUpdatedPatJetsAK8WithCustomTagger"
+        process.updatedJetsAK8.jetSource = "selectedUpdatedPatJetsAK8WithCustomTagger"
+
+
     return process
 
 
@@ -287,11 +327,11 @@ def get_DeepCSV_vars():
     )
     return DeepCSVVars
 
-def add_BTV(process, runOnMC=False, addAK4=True, addAK8=True, addAK15=False, keepInputs=True):
+def add_BTV(process, runOnMC=False, addAK4=True, addAK8=True, addAK15=False, keepInputs=True, custom_tagger_name=None):
     if addAK4:
         process = update_jets_AK4(process)
     if addAK8:
-        process = update_jets_AK8(process)
+        process = update_jets_AK8(process, custom_tagger_name)
         process = update_jets_AK8_subjet(process)
     if addAK15:
         process = update_jets_AK15(process)
