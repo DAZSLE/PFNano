@@ -104,7 +104,7 @@ samples:
         VectorZPrimeToQQ_M500 : /VectorZPrimeToQQ_M500_pT300_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
 
   QstarToQW:
-      datasets:
+    datasets:
         QstarToQW_M_2000_mW_25  : /QstarToQW_M_2000_mW_25_TuneCP2_13TeV-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
         QstarToQW_M_2000_mW_80  : /QstarToQW_M_2000_mW_80_TuneCP2_13TeV-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
         QstarToQW_M_2000_mW_170 : /QstarToQW_M_2000_mW_170_TuneCP2_13TeV-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
