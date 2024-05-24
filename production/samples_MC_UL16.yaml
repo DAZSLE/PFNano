@@ -58,7 +58,6 @@ samples:
       TTTo2L2Nu            : /TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL16MiniAODv2-106X_mcRun2_asymptotic_v17-v1/MINIAODSIM
       TTToHadronic         : /TTToHadronic_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL16MiniAODv2-106X_mcRun2_asymptotic_v17-v1/MINIAODSIM
       TTToSemiLeptonic     : /TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL16MiniAODv2-106X_mcRun2_asymptotic_v17-v1/MINIAODSIM
-      TTToSemiLeptonic_ext1: /TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL16MiniAODv2-PUForMUOVal_106X_mcRun2_asymptotic_v17_ext1-v2/MINIAODSIM
 
   SingleTop:
     datasets: 
