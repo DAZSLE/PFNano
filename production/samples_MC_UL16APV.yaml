@@ -120,10 +120,54 @@ samples:
 
   XToYYprime:
     datasets:
-        XToYYprimeTo4Q_MX2000_MY80_MYprime170: /XToYYprimeTo4Q_MX2000_MY80_MYprime170_narrow_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v2/MINIAODSIM
-        XToYYprimeTo4Q_MX3000_MY25_MYprime400: /XToYYprimeTo4Q_MX3000_MY25_MYprime400_narrow_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v2/MINIAODSIM
-        XToYYprimeTo4Q_MX5000_MY25_MYprime25: /XToYYprimeTo4Q_MX5000_MY25_MYprime25_narrow_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v2/MINIAODSIM
+        XToYYprimeTo4Q_MX2000_MY25_MYprime25  : /XToYYprimeTo4Q_MX2000_MY25_MYprime25_narrow_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM
+        XToYYprimeTo4Q_MX2000_MY25_MYprime80  : /XToYYprimeTo4Q_MX2000_MY25_MYprime80_narrow_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM
+        XToYYprimeTo4Q_MX2000_MY25_MYprime170 : /XToYYprimeTo4Q_MX2000_MY25_MYprime170_narrow_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM
+        XToYYprimeTo4Q_MX2000_MY25_MYprime400 : /XToYYprimeTo4Q_MX2000_MY25_MYprime400_narrow_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM
+        XToYYprimeTo4Q_MX2000_MY80_MYprime25  : /XToYYprimeTo4Q_MX2000_MY80_MYprime25_narrow_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM
+        XToYYprimeTo4Q_MX2000_MY80_MYprime80  : /XToYYprimeTo4Q_MX2000_MY80_MYprime80_narrow_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM
+        XToYYprimeTo4Q_MX2000_MY80_MYprime170 : /XToYYprimeTo4Q_MX2000_MY80_MYprime170_narrow_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v2/MINIAODSIM
+        XToYYprimeTo4Q_MX2000_MY80_MYprime400 : /XToYYprimeTo4Q_MX2000_MY80_MYprime400_narrow_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM
+        XToYYprimeTo4Q_MX2000_MY170_MYprime25 : /XToYYprimeTo4Q_MX2000_MY170_MYprime25_narrow_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM
+        XToYYprimeTo4Q_MX2000_MY170_MYprime80 : /XToYYprimeTo4Q_MX2000_MY170_MYprime80_narrow_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM
+        XToYYprimeTo4Q_MX2000_MY170_MYprime170: /XToYYprimeTo4Q_MX2000_MY170_MYprime170_narrow_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM
+        XToYYprimeTo4Q_MX2000_MY170_MYprime400: /XToYYprimeTo4Q_MX2000_MY170_MYprime400_narrow_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM
+        XToYYprimeTo4Q_MX2000_MY400_MYprime25 : /XToYYprimeTo4Q_MX2000_MY400_MYprime25_narrow_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM
+        XToYYprimeTo4Q_MX2000_MY400_MYprime80 : /XToYYprimeTo4Q_MX2000_MY400_MYprime80_narrow_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM
+        XToYYprimeTo4Q_MX2000_MY400_MYprime170: /XToYYprimeTo4Q_MX2000_MY400_MYprime170_narrow_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM
+        XToYYprimeTo4Q_MX2000_MY400_MYprime400: /XToYYprimeTo4Q_MX2000_MY400_MYprime400_narrow_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM
+        XToYYprimeTo4Q_MX3000_MY25_MYprime25  : /XToYYprimeTo4Q_MX3000_MY25_MYprime25_narrow_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM
+        XToYYprimeTo4Q_MX3000_MY25_MYprime80  : /XToYYprimeTo4Q_MX3000_MY25_MYprime80_narrow_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM
+        XToYYprimeTo4Q_MX3000_MY25_MYprime170 : /XToYYprimeTo4Q_MX3000_MY25_MYprime170_narrow_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM
+        XToYYprimeTo4Q_MX3000_MY25_MYprime400 : /XToYYprimeTo4Q_MX3000_MY25_MYprime400_narrow_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v2/MINIAODSIM
+        XToYYprimeTo4Q_MX3000_MY80_MYprime25  : /XToYYprimeTo4Q_MX3000_MY80_MYprime25_narrow_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM
+        XToYYprimeTo4Q_MX3000_MY80_MYprime80  : /XToYYprimeTo4Q_MX3000_MY80_MYprime80_narrow_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM
+        XToYYprimeTo4Q_MX3000_MY80_MYprime170 : /XToYYprimeTo4Q_MX3000_MY80_MYprime170_narrow_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM
+        XToYYprimeTo4Q_MX3000_MY80_MYprime400 : /XToYYprimeTo4Q_MX3000_MY80_MYprime400_narrow_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM
+        XToYYprimeTo4Q_MX3000_MY170_MYprime25 : /XToYYprimeTo4Q_MX3000_MY170_MYprime25_narrow_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM
+        XToYYprimeTo4Q_MX3000_MY170_MYprime80 : /XToYYprimeTo4Q_MX3000_MY170_MYprime80_narrow_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM
+        XToYYprimeTo4Q_MX3000_MY170_MYprime170: /XToYYprimeTo4Q_MX3000_MY170_MYprime170_narrow_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM
+        XToYYprimeTo4Q_MX3000_MY170_MYprime400: /XToYYprimeTo4Q_MX3000_MY170_MYprime400_narrow_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM
+        XToYYprimeTo4Q_MX3000_MY400_MYprime25 : /XToYYprimeTo4Q_MX3000_MY400_MYprime25_narrow_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM
+        XToYYprimeTo4Q_MX3000_MY400_MYprime80 : /XToYYprimeTo4Q_MX3000_MY400_MYprime80_narrow_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM
+        XToYYprimeTo4Q_MX3000_MY400_MYprime170: /XToYYprimeTo4Q_MX3000_MY400_MYprime170_narrow_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM
+        XToYYprimeTo4Q_MX3000_MY400_MYprime400: /XToYYprimeTo4Q_MX3000_MY400_MYprime400_narrow_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM
+        XToYYprimeTo4Q_MX5000_MY25_MYprime25  : /XToYYprimeTo4Q_MX5000_MY25_MYprime25_narrow_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v2/MINIAODSIM
+        XToYYprimeTo4Q_MX5000_MY25_MYprime80  : /XToYYprimeTo4Q_MX5000_MY25_MYprime80_narrow_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM
+        XToYYprimeTo4Q_MX5000_MY25_MYprime170 : /XToYYprimeTo4Q_MX5000_MY25_MYprime170_narrow_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM
+        XToYYprimeTo4Q_MX5000_MY25_MYprime400 : /XToYYprimeTo4Q_MX5000_MY25_MYprime400_narrow_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM
+        XToYYprimeTo4Q_MX5000_MY80_MYprime25  : /XToYYprimeTo4Q_MX5000_MY80_MYprime25_narrow_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM
+        XToYYprimeTo4Q_MX5000_MY80_MYprime80  : /XToYYprimeTo4Q_MX5000_MY80_MYprime80_narrow_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM
+        XToYYprimeTo4Q_MX5000_MY80_MYprime170 : /XToYYprimeTo4Q_MX5000_MY80_MYprime170_narrow_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM
+        XToYYprimeTo4Q_MX5000_MY80_MYprime400 : /XToYYprimeTo4Q_MX5000_MY80_MYprime400_narrow_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM
+        XToYYprimeTo4Q_MX5000_MY170_MYprime25 : /XToYYprimeTo4Q_MX5000_MY170_MYprime25_narrow_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM
+        XToYYprimeTo4Q_MX5000_MY170_MYprime80 : /XToYYprimeTo4Q_MX5000_MY170_MYprime80_narrow_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM
         XToYYprimeTo4Q_MX5000_MY170_MYprime170: /XToYYprimeTo4Q_MX5000_MY170_MYprime170_narrow_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v2/MINIAODSIM
+        XToYYprimeTo4Q_MX5000_MY170_MYprime400: /XToYYprimeTo4Q_MX5000_MY170_MYprime400_narrow_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM
+        XToYYprimeTo4Q_MX5000_MY400_MYprime25 : /XToYYprimeTo4Q_MX5000_MY400_MYprime25_narrow_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM
+        XToYYprimeTo4Q_MX5000_MY400_MYprime80 : /XToYYprimeTo4Q_MX5000_MY400_MYprime80_narrow_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM
+        XToYYprimeTo4Q_MX5000_MY400_MYprime170: /XToYYprimeTo4Q_MX5000_MY400_MYprime170_narrow_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM
+        XToYYprimeTo4Q_MX5000_MY400_MYprime400: /XToYYprimeTo4Q_MX5000_MY400_MYprime400_narrow_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM
 
   Higgs:
     datasets: 
