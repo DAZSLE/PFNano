@@ -182,6 +182,21 @@ samples:
       HWplusJ_HToWW_M-125                                                             : /HWplusJ_HToWW_M-125_TuneCP5_13TeV-powheg-jhugen727-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
       GluGluZH_HToWW_M-125_TuneCP5_13TeV-powheg-pythia8                               : /GluGluZH_HToWW_M-125_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
       ttHToNonbb_M125                                                                 : /ttHToNonbb_M125_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
+  
+  
+  HH:
+    datasets:
+      GluGluToHHTobbVV_node_cHHH0: /GluGluToHHTobbVV_node_cHHH0_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v1/MINIAODSIM
+      GluGluToHHTobbVV_node_cHHH1: /GluGluToHHTobbVV_node_cHHH1_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v1/MINIAODSIM
+      GluGluToHHTobbVV_node_cHHH2p45: /GluGluToHHTobbVV_node_cHHH2p45_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v1/MINIAODSIM
+      GluGluToHHTobbVV_node_cHHH5: /GluGluToHHTobbVV_node_cHHH5_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v1/MINIAODSIM 
+      VBF_HHTobbVV_CV_0_5_C2V_1_C3_1: /VBF_HHTobbVV_CV_0_5_C2V_1_C3_1_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
+      VBF_HHTobbVV_CV_1_5_C2V_1_C3_1: /VBF_HHTobbVV_CV_1_5_C2V_1_C3_1_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
+      VBF_HHTobbVV_CV_1_C2V_0_C3_1: /VBF_HHTobbVV_CV_1_C2V_0_C3_1_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
+      VBF_HHTobbVV_CV_1_C2V_1_C3_0: /VBF_HHTobbVV_CV_1_C2V_1_C3_0_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
+      VBF_HHTobbVV_CV_1_C2V_1_C3_1: /VBF_HHTobbVV_CV_1_C2V_1_C3_1_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
+      VBF_HHTobbVV_CV_1_C2V_1_C3_2: /VBF_HHTobbVV_CV_1_C2V_1_C3_2_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
+      VBF_HHTobbVV_CV_1_C2V_2_C3_1: /VBF_HHTobbVV_CV_1_C2V_2_C3_1_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
 
 
   EWK:
