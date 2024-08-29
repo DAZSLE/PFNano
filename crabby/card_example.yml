@@ -1,0 +1,24 @@
+campaign:
+  name: 'test'  # irrelevant
+  crab_template: template_crab.py
+
+  # storageSite: T2_US_MIT
+  storageSite: T3_US_FNALLPC
+  outLFNDirBase: /store/group/lpcpfnano/v2_4_test/{username}
+
+  # Publication
+  publication: True
+  tag_extension: PFNano_v24_  # Will get appended after the current tag
+  tag_mod:  # Will modify name in-place for MC eg. "PFNanoAODv1" will replace MiniAODv2 -> PFNanoAODv1
+
+  # Job setup
+  config: /uscms_data/d3/anovak/pfnano_dazsle/CMSSW_10_6_26_prod/src/PhysicsTools/PFNano/test/ak15/nano_data_2017_UL_NANO.py
+  globaltag: 102X_dataRun2_v14
+  # Specify if running on data
+  data: True
+  # data: False
+  lumiMask:  # json file  # not recommended for use, better to apply lumi mask during analysis
+  # datasets will take either a list of DAS names or a text file containing them
+  datasets: | 
+    /JetHT/Run2017B-UL2017_MiniAODv2-v1/MINIAOD
+    /JetHT/Run2017C-UL2017_MiniAODv2-v1/MINIAOD

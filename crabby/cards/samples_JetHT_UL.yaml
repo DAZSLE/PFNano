@@ -1,0 +1,60 @@
+defaults:
+  crab_template: template_crab.py
+  # Comments
+  data: True
+  # Splitting configured automatically by crabby to defaults
+  globaltag: 106X_dataRun2_v35
+  # Run Opts
+  allowInvalid: True
+  # Storage
+  storageSite: T3_US_FNALLPC
+  outLFNDirBase: /store/group/lpcpfnano/v2_4/{username}
+  # Publication
+  publication: True
+  tag_extension: PFNano_v24_  # Will get appended after the current tag
+  tag_mod:  # Will modify name in-place for MC eg. "PFNanoAODv1" will replace MiniAODv2 -> PFNanoAODv1
+
+samples:
+  # https://twiki.cern.ch/twiki/bin/viewauth/CMS/PdmVDatasetsUL2016
+  JetHT2016: 
+    year: 2016
+    config: $CMSSW_BASE/src/PhysicsTools/PFNano/test/ak15/nano_data_2016_UL_NANO.py
+    # lumimask: https://cms-service-dqmdc.web.cern.ch/CAF/certification/Collisions16/13TeV/Legacy_2016/Cert_271036-284044_13TeV_Legacy2016_Collisions16_JSON.txt
+    datasets: 
+      JetHT_Run2016B_ver1_HIPM: /JetHT/Run2016B-ver1_HIPM_UL2016_MiniAODv2-v2/MINIAOD
+      JetHT_Run2016B_ver2_HIPM: /JetHT/Run2016B-ver2_HIPM_UL2016_MiniAODv2-v2/MINIAOD
+      JetHT_Run2016C_HIPM: /JetHT/Run2016C-HIPM_UL2016_MiniAODv2-v2/MINIAOD
+      JetHT_Run2016D_HIPM: /JetHT/Run2016D-HIPM_UL2016_MiniAODv2-v2/MINIAOD
+      JetHT_Run2016E_HIPM: /JetHT/Run2016E-HIPM_UL2016_MiniAODv2-v2/MINIAOD
+      JetHT_Run2016F_HIPM: /JetHT/Run2016F-HIPM_UL2016_MiniAODv2-v2/MINIAOD
+      JetHT_Run2016F: /JetHT/Run2016F-UL2016_MiniAODv2-v2/MINIAOD
+      JetHT_Run2016G: /JetHT/Run2016G-UL2016_MiniAODv2-v2/MINIAOD
+      JetHT_Run2016H: /JetHT/Run2016H-UL2016_MiniAODv2-v2/MINIAOD
+
+  # https://twiki.cern.ch/twiki/bin/view/CMS/PdmVDatasetsUL2017
+  JetHT2017: 
+    year: 2017
+    config: $CMSSW_BASE/src/PhysicsTools/PFNano/test/ak15/nano_data_2017_UL_NANO.py
+    # lumimask: https://cms-service-dqmdc.web.cern.ch/CAF/certification/Collisions17/13TeV/Legacy_2017/Cert_294927-306462_13TeV_UL2017_Collisions17_GoldenJSON.txt
+    datasets: 
+      JetHT_Run2017B: /JetHT/Run2017B-UL2017_MiniAODv2-v1/MINIAOD
+      JetHT_Run2017C: /JetHT/Run2017C-UL2017_MiniAODv2-v1/MINIAOD
+      JetHT_Run2017D: /JetHT/Run2017D-UL2017_MiniAODv2-v1/MINIAOD
+      JetHT_Run2017E: /JetHT/Run2017E-UL2017_MiniAODv2-v1/MINIAOD
+      JetHT_Run2017F: /JetHT/Run2017F-UL2017_MiniAODv2-v1/MINIAOD
+
+  # https://twiki.cern.ch/twiki/bin/view/CMS/PdmVDatasetsUL2018
+  JetHT2018: 
+    year: 2018
+    config: $CMSSW_BASE/src/PhysicsTools/PFNano/test/ak15/nano_data_2018_UL_NANO.py
+    # lumimask: https://cms-service-dqmdc.web.cern.ch/CAF/certification/Collisions18/13TeV/Legacy_2018/Cert_314472-325175_13TeV_Legacy2018_Collisions18_JSON.txt
+    datasets: 
+      # superseded by GT36/v2
+      # JetHT_Run2018A: /JetHT/Run2018A-UL2018_MiniAODv2-v1/MINIAOD
+      # JetHT_Run2018B: /JetHT/Run2018B-UL2018_MiniAODv2-v1/MINIAOD
+      # JetHT_Run2018C: /JetHT/Run2018C-UL2018_MiniAODv2-v1/MINIAOD
+      # JetHT_Run2018D: /JetHT/Run2018D-UL2018_MiniAODv2-v1/MINIAOD
+      JetHT_Run2018A_GT36: /JetHT/Run2018A-UL2018_MiniAODv2_GT36-v1/MINIAOD
+      JetHT_Run2018B_GT36: /JetHT/Run2018B-UL2018_MiniAODv2_GT36-v1/MINIAOD
+      JetHT_Run2018C_GT36: /JetHT/Run2018C-UL2018_MiniAODv2_GT36-v1/MINIAOD
+      JetHT_Run2018D_v2: /JetHT/Run2018D-UL2018_MiniAODv2-v2/MINIAOD

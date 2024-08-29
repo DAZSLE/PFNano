@@ -1,8 +1,20 @@
 # PFNano
 This is a fork of PFNano, used by DAZSLE for signal ntuples. 
 
-Setup instructions:
+UL Repro instructions at (FNAL/LPC):
+- Run sl7 container, this needs to be started every time.
 ```
+cmssw-el7 -p --bind `readlink $HOME` --bind `readlink -f ${HOME}/nobackup/` --bind /uscms_data --bind /cvmfs -- /bin/bash -l
+``` 
+- Optionally alias it
+```
+alias sl7="cmssw-el7 -p --bind `readlink $HOME` --bind `readlink -f ${HOME}/nobackup/` --bind /uscms_data --bind /cvmfs -- /bin/bash -l"
+```
+
+- setup project (preferrably in nobackup area - `/uscms_data/d3/{username}`)
+```
+mkdir pfnano_dazsle
+cd pfnano_dazsle
 scram project -n "CMSSW_10_6_26_prod"  CMSSW_10_6_26
 cd  CMSSW_10_6_26_prod/src
 cmsenv
@@ -10,13 +22,11 @@ git cms-init
 git cms-rebase-topic DryRun:CMSSW_10_6_19_patch_pfnano
 git clone git@github.com:DAZSLE/PFNano PhysicsTools/PFNano
 cd PhysicsTools/PFNano
-git checkout tags/v2.3 -b v2.3
 cd $CMSSW_BASE/src
 scram b -j8
 ```
-(Note: for MiniAODv2, we no longer need `git cms-rebase-topic andrzejnovak:614nosort`, since that was merged into CMSSW sometime prior to 10_6_26.)
 
-Launching production:
+- Launch production
 ```
 setupCrab
 voms-proxy-init -voms cms

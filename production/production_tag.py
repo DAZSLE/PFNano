@@ -6,5 +6,6 @@
 #production_tag = "v2_0" # Migrating to MiniAODv2 / NanoAODv9, for the new PUPPI tune and JECs
 #production_tag = "v2_1" # Add AK15 b tagging variables
 #production_tag = "v2_2" # Remove AK4 PFcands and GenCands to save space
-production_tag = "v2_3" # Add AK8 GenAK8SFJets and PN mass regression
-production_tag = "v2_3_2" # Feb 2024 recovery jobs
+# production_tag = "v2_3" # Add AK8 GenAK8SFJets and PN mass regression
+# production_tag = "v2_3_2" # Feb 2024 recovery jobs
+production_tag = "v2_4" # Aug 2024 repro
