@@ -26,18 +26,29 @@ cd $CMSSW_BASE/src
 scram b -j8
 ```
 
-- Launch production
+- Setup crab
 ```
-setupCrab
-voms-proxy-init -voms cms
-cd $CMSSW_BASE/src/PhysicsTools/PFNano/production
-python submit.py -y samples_testdata.yaml
+source source_carb.sh
+voms-proxy-init --voms cms --valid 168:00
+cd $CMSSW_BASE/src/PhysicsTools/PFNano/crabby
 ```
 
-Use the `.yaml` files to configure the submission. Hopefully it's straightforward to understand, ask David if not.
+- Decide on a crab working directory (this needs to be outside CMSSW_BASE to not blow up the crab tarball size) eg. `~/nobackup/pfnano_dazsle/crab_prod9`
+- Launch production (updated crabby tool, test with `--test` : single job, no publication)
+```
+python crabby.py -w ~/nobackup/pfnano_dazsle/crab_prod9 -c cards/samples_testdata.yaml --make
+```
+- Check if crab submit files look reasonable 
+```
+python crabby.py -w ~/nobackup/pfnano_dazsle/crab_prod9 -c cards/samples_testdata.yaml --submit
+```
+- Check on status with 
+```
+python crabby.py -w ~/nobackup/pfnano_dazsle/crab_prod9 -c cards/samples_testdata.yaml --status
+```
 
 
-# Central branch README is below
+# Older branch README is below
 
 This is a [NanoAOD](https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBookNanoAOD) framework for advance developments of jet algorithms. 
 The current full content of this development branch can be seen [here](http://algomez.web.cern.ch/algomez/testWeb/PFnano_content_v02.html) and the size [here](http://algomez.web.cern.ch/algomez/testWeb/PFnano_size_v02.html).
