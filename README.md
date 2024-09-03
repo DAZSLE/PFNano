@@ -31,7 +31,6 @@ scram b -j8
 cd $CMSSW_BASE/src/PhysicsTools/PFNano/crabby
 source source_crab.sh
 voms-proxy-init --voms cms --valid 168:00
-cd $CMSSW_BASE/src/PhysicsTools/PFNano/crabby
 ```
 
 - Decide on a crab working directory (this needs to be outside CMSSW_BASE to not blow up the crab tarball size) eg. `~/nobackup/pfnano_dazsle/crab_prod9`
