@@ -28,7 +28,8 @@ scram b -j8
 
 - Setup crab
 ```
-source source_carb.sh
+cd $CMSSW_BASE/src/PhysicsTools/PFNano/crabby
+source source_crab.sh
 voms-proxy-init --voms cms --valid 168:00
 cd $CMSSW_BASE/src/PhysicsTools/PFNano/crabby
 ```
